@@ -1,0 +1,36 @@
+.viewer-container{
+    width: 100%;
+    position: relative;
+    color: #444444;
+}
+h3 .glyphicon-globe{
+    top: 2px;
+}
+h3 time{
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+#mapillary-viewer{
+    height: 520px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.viewer-container .loading{
+     background-color: rgba(0,0,0,.4);
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     color: #eaeaea;
+     text-align: center;
+     padding-top: 220px;
+     z-index: 99;
+}
+h3.username{
+    text-transform: capitalize;
+}
+.panel-heading .glyphicon-star{
+    color: #888888;
+}

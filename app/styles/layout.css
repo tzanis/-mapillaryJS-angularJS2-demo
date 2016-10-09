@@ -1,0 +1,41 @@
+.image-list a{
+    transition: all 0.3s linear;
+    box-shadow: 0 0 0px 0px #adadad;
+}
+.image-list a.selected{
+    transition: all 0.3s linear;
+    box-shadow: -3px 0 0px 0px #868686;
+}
+.image-list a img{
+    padding: 0;
+}
+.image-list .panel-body{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.image-list .list-group{
+    margin-bottom: 0;
+}
+.image-list .list-group-item:first-child,
+.image-list .list-group-item:last-child{
+    border-radius: 0;
+}
+
+.image-list .list-group{
+    font-size: 12px;
+    line-height: 1.5;
+}
+.image-list .details{
+    padding-bottom: 20px;
+}
+.image-list .views{
+    position: absolute;
+    display: block;
+    right: 15px;
+    bottom: 10px;
+    color: #777;
+}
+footer{
+    text-align: center;
+    color: #868686;
+}

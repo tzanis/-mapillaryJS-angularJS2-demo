@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 *ngIf="image" class="panel-title">
+            <span class="glyphicon glyphicon-globe"></span> {{ image.location }}
+            <i *ngIf="image.location == null">Location not available</i>
+            <!--(<span
+                  class="glyphicon glyphicon-star "
+                  title="{{(image.starred)?'Starred':'Not Starred'}}"
+                  [class.glyphicon-star-empty]="starred"
+                  [class.glyphicon-star]="!starred">
+            </span>)-->
+            <time class="pull-right">
+                <span class="glyphicon glyphicon-calendar"></span>
+                {{ moment(image.captured_at).format('MMM Do YYYY, h:mm:ss a') }}
+            </time>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="viewer-container">
+            <div id="mapillary-viewer">
+                <div class="loading" *ngIf="isLoading">Loading...</div>
+                <div class="loading" *ngIf="!image && !isLoading">Pick an Image...</div>
+            </div>
+            <p *ngIf="image">
+                <span class="glyphicon glyphicon-globe"></span> ({{image.lon}}, {{image.lat}})
+                <span class="pull-right">#{{image.key}}</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default"  *ngIf="userData">
+    <div class="panel-heading">
+        <h3 class="panel-title username"><span class="glyphicon glyphicon-user"></span> By {{userData.user}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="viewer-container">
+            <div id="image-details">
+                <div class="row">
+                    <img class="col-xs-3" [src]="userData.avatar" />
+                    <div class="col-xs-9">
+                        <h4>About:</h4>
+                        <p>{{userData.about}}</p>
+                        <p>
+                            <span class="glyphicon glyphicon glyphicon-upload"></span> Total images uploaded: <strong>{{userData.images_all}}</strong>.<br>
+                            <span class="glyphicon glyphicon glyphicon-time"></span> Member since: <strong>{{ moment(userData.member_since).format('LL') }}</strong>.<br>
+                            <span class="glyphicon glyphicon glyphicon-plane"></span> Total distance:  <strong>{{userData.distance_all}}</strong>.<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

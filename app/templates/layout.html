@@ -1,0 +1,38 @@
+<div class="container">
+
+    <h1>Awesome places</h1>
+
+    <div class="col-sm-9">
+        <image-viewr [image]="image"></image-viewr>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="panel panel-default image-list">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">Up next:</h3>
+            </div>
+
+            <div class="panel-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item row"
+                       *ngFor="let image of images"
+                       [class.selected]="image === selectedImage"
+                       (click)="onSelect(image, $event)">
+                        <img class="col-sm-6" [src]="'https://d1cuyjsrcm0gby.cloudfront.net/'+ image.mkey +'/thumb-320.jpg'"/>
+                        <div class="col-sm-6 details">
+                            {{ moment(image.captured_at).fromNow() }}<br>
+                            by {{image.user}}.<br>
+                        </div>
+                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> {{image.views}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Mapillary-JS integration Demo using AngularJS 2.
+    </footer>
+
+</div>
